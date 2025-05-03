@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,10 +16,10 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 260 84% 66%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
+    --secondary: 299 90% 60%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 210 40% 96.1%;
@@ -96,6 +99,30 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-quiz-background text-quiz-text font-['Open_Sans'];
+  }
+  
+  .quiz-gradient {
+    @apply bg-gradient-to-r from-quiz-primary to-quiz-secondary;
+  }
+  
+  .quiz-button {
+    @apply rounded-lg px-6 py-3 font-semibold text-white transition-all hover:shadow-lg;
+  }
+  
+  .answer-button {
+    @apply border-2 rounded-lg px-4 py-3 transition-all hover:bg-opacity-10 hover:bg-quiz-primary;
+  }
+  
+  .answer-button.selected {
+    @apply bg-quiz-primary bg-opacity-10 border-quiz-primary;
+  }
+  
+  .answer-button.correct {
+    @apply bg-green-500 bg-opacity-10 border-green-500 text-green-700;
+  }
+  
+  .answer-button.incorrect {
+    @apply bg-red-500 bg-opacity-10 border-red-500 text-red-700;
   }
 }
